@@ -15,6 +15,7 @@ import com.futebol.sigpelada.dominio.Time;
  */
 @Repository
 public class TimeDao {
+	
 	/**
 	 * Gerencia a dependencia de um Ententy Manager
 	 */
@@ -34,7 +35,7 @@ public class TimeDao {
      * @return
      */
     public List<Time> recuperar() {
-        return em.createQuery("select p from Time p", Time.class).getResultList();
+        return em.createQuery("select t from Time t", Time.class).getResultList();
     }
     
     /**
