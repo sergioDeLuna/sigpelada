@@ -30,7 +30,7 @@ public class TimeDao {
     }
     
     /**
-     * Recupera lista de elementos
+     * Recupera lista de elementos cadastrados
      * @return
      */
     public List<Time> recuperar() {
