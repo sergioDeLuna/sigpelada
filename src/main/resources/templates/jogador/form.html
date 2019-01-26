@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sigpelada</title>
+ 
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+ 
+    <link href="/webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+ 
+<div class="container">
+    <div class="jumbotron">
+        <h1>SigPelada</h1>
+    </div>
+ 
+    <h4>
+        Novo Jogador
+    </h4>
+ 
+    <form th:action="@{/times/{timeId}/jogadores/salvar(timeId=${timeId})}"
+      th:method="${jogador.id} == 0 ? post : put" th:object="${jogador}">
+        <div class="row">
+            <input id="id" type="hidden" th:field="*{id}"/>
+            <div class="form-group col-md-4">
+                <label for="nome">Nome:</label>
+                <input class="form-control" id="nome" type="text" th:field="*{nome}"/>
+                <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+            </div>
+ 
+            <div class="form-group col-md-2">
+                <label for="setor">Setor:</label>
+                <input class="form-control" id="setor" type="text" th:field="*{setor}"/>
+                <div th:if="${#fields.hasErrors('setor')}" th:errors="*{setor}"></div>
+            </div>
+            
+            <div class="form-group col-md-4">
+                <label for="posicao">Posição:</label>
+                <input class="form-control" id="posicao" type="text" th:field="*{posicao}"/>
+                <div th:if="${#fields.hasErrors('posicao')}" th:errors="*{posicao}"></div>
+            </div>
+            
+            <div class="form-group col-md-2">
+                <label for="numeroCamisa">Número da Camisa:</label>
+                <input class="form-control" id="numeroCamisa" type="number" th:field="*{numeroCamisa}"/>
+                <div th:if="${#fields.hasErrors('numeroCamisa')}" th:errors="*{numeroCamisa}"></div>
+            </div>
+ 
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Salvar</button>
+        </div>
+ 
+    </form>
+    <hr/>
+ 
+    <a class="btn btn-light" th:href="@{/times/{timeId}/jogadores/listar(timeId=${timeId})}">Voltar</a>
+ 
+    <hr/>
+    <footer class="footer">
+        <p>&copy; 2019 SergioLuna</p>
+    </footer>
+ 
+</div>
+</body>
+</html>

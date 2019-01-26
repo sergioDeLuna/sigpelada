@@ -43,7 +43,7 @@ public class TimeController {
     }
     
     /**
-     * Redirecionar para a página form do jogador
+     * Redireciona para a página form - cadastro do time
      * @param time
      * @return
      */
@@ -71,7 +71,7 @@ public class TimeController {
     }
     
     /**
-     * 
+     * Redireciona para a página form - edição do time
      * @param id
      * @param model
      * @return
