@@ -43,13 +43,13 @@ public class TimeController {
     }
     
     /**
-     * 
+     * Redirecionar para a página form do jogador
      * @param time
      * @return
      */
     @GetMapping("/cadastro")
     public String preSalvar(@ModelAttribute("time") Time time) {
-        return "/time/add";
+        return "/time/form";
     }
     
     /**
@@ -62,7 +62,7 @@ public class TimeController {
     @PostMapping("/salvar")
     public String salvar(@Valid @ModelAttribute("time") Time time, BindingResult result, RedirectAttributes attr) {
         if (result.hasErrors()) {
-            return "/time/add";
+            return "/time/form";
         }
  
         timeService.salvar(time);
@@ -80,7 +80,7 @@ public class TimeController {
     public ModelAndView preAtualizar(@PathVariable("id") long id, ModelMap model) {
         Time time = timeService.recuperarPorId(id);
         model.addAttribute("time", time);
-        return new ModelAndView("/time/add", model);
+        return new ModelAndView("/time/form", model);
     }
     
     /**
@@ -93,7 +93,7 @@ public class TimeController {
     @PutMapping("/salvar")
     public ModelAndView atualizar(@Valid @ModelAttribute("time") Time time, BindingResult result, RedirectAttributes attr) {
         if (result.hasErrors()) {
-            return new ModelAndView("/playlist/add");
+            return new ModelAndView("/time/form");
         }
  
         timeService.atualizar(time);
