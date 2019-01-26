@@ -3,13 +3,13 @@ package com.futebol.sigpelada.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 
-@SuppressWarnings("deprecation")
+
 @Configuration
-public class ConfiguracaoSpringMvc extends WebMvcConfigurerAdapter {
+public class ConfiguracaoSpringMvc implements WebMvcConfigurer {
 	/**
 	 * Lidando com Thymeleaf nas páginas web
 	 * @param resolver
