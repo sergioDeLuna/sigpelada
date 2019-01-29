@@ -3,6 +3,7 @@ package com.futebol.sigpelada.controller;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.Valid;
 
@@ -38,7 +39,7 @@ public class TimeController implements Serializable {
 	private Time time;
 	private List<Time> times;
 	
-	@Autowired
+	@Inject
 	private TimeService timeService;
 
 	public void iniciarBean() {

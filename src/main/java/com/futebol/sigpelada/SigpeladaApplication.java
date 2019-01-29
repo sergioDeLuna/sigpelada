@@ -17,18 +17,18 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 
 
 @SpringBootApplication
-public class SigpeladaApplication implements WebApplicationInitializer {
+public class SigpeladaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SigpeladaApplication.class, args);
 	}
 	
-    @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
-        AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext();
-        applicationContext.scan(SigpeladaApplication.class.getPackage().getName()); 
-        servletContext.addListener(new ContextLoaderListener(applicationContext));
-        servletContext.addListener(new RequestContextListener());
-    }
+//    @Override
+//    public void onStartup(ServletContext servletContext) throws ServletException {
+//        AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext();
+//        applicationContext.scan(SigpeladaApplication.class.getPackage().getName()); 
+//        servletContext.addListener(new ContextLoaderListener(applicationContext));
+//        servletContext.addListener(new RequestContextListener());
+//    }
 }
 
