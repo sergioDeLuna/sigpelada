@@ -1,32 +1,25 @@
 package com.futebol.sigpelada.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 
 
 @Configuration
-public class ConfiguracaoSpringMvc implements WebMvcConfigurer {
-	/**
-	 * Lidando com Thymeleaf nas páginas web
-	 * @param resolver
-	 * @return
-	 */
-	@Bean
-	public SpringTemplateEngine templateEngine
-	   (SpringResourceTemplateResolver resolver) {
-	   SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-	   templateEngine.setTemplateResolver(resolver);
-	   return templateEngine;
-	}
-	
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-	   registry.addViewController("/").setViewName("home");
-	   registry.addViewController("/home").setViewName("home");
-	}
+public class ConfiguracaoSpringMvc {
+ 
+    @Bean
+    public static CustomScopeConfigurer customScopeConfigurer() {
+        Map<String, Object> scopes = new HashMap<>();
+        scopes.put("view", new ViewScope());
+
+        CustomScopeConfigurer customScopeConfigurer = new CustomScopeConfigurer();
+        customScopeConfigurer.setScopes(scopes);
+
+        return customScopeConfigurer;
+    }
   
 }

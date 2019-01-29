@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<p:panel header="Times Cadastrados"
+	rendered="#{timeBean.time eq null}">
+	<p:commandButton value="Novo Aluno" icon="adicionar-icon"
+		action="#{timeBean.novoTime}" update="form" />
+	<br />
+	<br />
+
+	<p:dataTable value="#{timeBean.times}" var="time" paginator="true"
+		rows="10" rowsPerPageTemplate="5, 10, 15"
+		paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} 
+				{PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+		
+		<p:column headerText="Nome" style="width:150px;">
+			<h:outputText value="#{time.nome}" />
+		</p:column>
+		
+		<p:column headerText="Uniforme" style="width:150px;">
+			<h:outputText value="#{time.uniforme}" />
+		</p:column>
+	</p:dataTable>
+
+</p:panel>
+
+</html>

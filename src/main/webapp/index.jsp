@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
- 
     <link href="/webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet"/>
 </head>
@@ -14,7 +13,7 @@
     <div class="jumbotron">
         <h1>SigPelada</h1>
         <p class="lead">
-            Cadastre os funcionÃ¡rios jogadores e monte os times
+            Cadastre os funcionários jogadores e monte os times
         </p>
     </div>
  
@@ -22,12 +21,12 @@
         <div class="col-md-6">
         </div>
         <div class="col-md-6">
-            <h3>ConheÃ§a os times que jÃ¡ existem!</h3>
+            <h3>Conheça os times que já existem!</h3>
             <p>
-                Aqui vocÃª pode acessar os times cadastradas ou criar novos.
+                Aqui você pode acessar os times cadastradas ou criar novos.
             </p>
             <p>
-                <a class="btn btn-success" href="/times/listar">Times</a>
+                <a class="btn btn-success" href="/times/testeForm">Times</a>
             </p>
         </div>
     </div>
