@@ -51,5 +51,10 @@
 	    <servlet-name>Faces Servlet</servlet-name>
 	    <url-pattern>*.xhtml</url-pattern>
 	  </servlet-mapping>
+	  
+	  <servlet-mapping>
+	    <servlet-name>facesServlet</servlet-name>
+	    <url-pattern>*.jsp</url-pattern>
+	  </servlet-mapping>
 	    
 </web-app>

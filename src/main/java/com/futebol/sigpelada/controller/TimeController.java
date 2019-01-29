@@ -3,6 +3,7 @@ package com.futebol.sigpelada.controller;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Named;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ import com.futebol.sigpelada.service.TimeService;
  * @author sergioluna
  *
  */
-@Controller("timeBean")
+@Named
 @Scope("session")
 public class TimeController implements Serializable {
 
